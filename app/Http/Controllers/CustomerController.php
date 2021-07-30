@@ -110,7 +110,7 @@ class CustomerController extends Controller
        $lims_customer_data['measure_6'] = $lims_customer_data['measure_6'];
        $lims_customer_data['measure_7'] = $lims_customer_data['measure_7'];
        $lims_customer_data['measure_8'] = $lims_customer_data['measure_8'];
-       $lims_customer_data['measure_9'] = $lims_customer_data['measure_9'];
+      /* $lims_customer_data['measure_9'] = $lims_customer_data['measure_9'];
        $lims_customer_data['measure_10'] = $lims_customer_data['measure_10'];
        $lims_customer_data['measure_11'] = $lims_customer_data['measure_11'];
        $lims_customer_data['measure_12'] = $lims_customer_data['measure_12'];
@@ -119,7 +119,7 @@ class CustomerController extends Controller
        $lims_customer_data['measure_15'] = $lims_customer_data['measure_15'];
        $lims_customer_data['measure_16'] = $lims_customer_data['measure_16'];
        $lims_customer_data['measure_17'] = $lims_customer_data['measure_17'];
-       $lims_customer_data['measure_18'] = $lims_customer_data['measure_18'];
+       $lims_customer_data['measure_18'] = $lims_customer_data['measure_18'];*/
        $lims_customer_data['measure_notes'] = $lims_customer_data['measure_notes'];
 
        CustomerMeasurement::create($lims_customer_data);
@@ -215,16 +215,6 @@ class CustomerController extends Controller
         $lims_customer_measurement_data['measure_6'] = $input['measure_6'];
         $lims_customer_measurement_data['measure_7'] = $input['measure_7'];
         $lims_customer_measurement_data['measure_8'] = $input['measure_8'];
-        $lims_customer_measurement_data['measure_9'] = $input['measure_9'];
-        $lims_customer_measurement_data['measure_10'] = $input['measure_10'];
-        $lims_customer_measurement_data['measure_11'] = $input['measure_11'];
-        $lims_customer_measurement_data['measure_12'] = $input['measure_12'];
-        $lims_customer_measurement_data['measure_13'] = $input['measure_13'];
-        $lims_customer_measurement_data['measure_14'] = $input['measure_14'];
-        $lims_customer_measurement_data['measure_15'] = $input['measure_15'];
-        $lims_customer_measurement_data['measure_16'] = $input['measure_16'];
-        $lims_customer_measurement_data['measure_17'] = $input['measure_17'];
-        $lims_customer_measurement_data['measure_18'] = $input['measure_18'];
         $lims_customer_measurement_data['measure_notes'] = $input['measure_notes'];
        // dd($lims_customer_measurement_data);
         $lims_customer_measurement_data->update($input);

@@ -51,7 +51,7 @@
 						<div class="col-md-12"><h4>Customer Measurements</h4></div>
 							 <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Neckline</label>
+                                    <label>Length</label>
                                     <input type="text" name="measure_1" value="{{$lims_customer_measurements_all->measure_1}}" class="form-control">
                                 </div>
                             </div>
@@ -63,40 +63,40 @@
                             </div>
 					 		<div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Bust</label>
+                                    <label>Hand Length </label>
                                     <input type="text" name="measure_3" value="{{$lims_customer_measurements_all->measure_3}}" class="form-control">
                                 </div>
                             </div>
 							<div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Bust Point</label>
+                                    <label>Neck</label>
                                     <input type="text" name="measure_4" value="{{$lims_customer_measurements_all->measure_4}}" class="form-control">
                                 </div>
                             </div>
 							<div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Bust Distance</label>
+                                    <label>Upper hand Loose</label>
                                     <input type="text" name="measure_5" value="{{$lims_customer_measurements_all->measure_5}}" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Arm Hole</label>
+                                    <label>Lower Hand Loose </label>
                                     <input type="text" name="measure_6" value="{{$lims_customer_measurements_all->measure_6}}" class="form-control">
                                 </div>
                             </div>
 					 		<div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Muscle</label>
+                                    <label>Bottom Loose</label>
                                     <input type="text" name="measure_7" value="{{$lims_customer_measurements_all->measure_7}}" class="form-control">
                                 </div>
                             </div>
 							<div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Sleeve length</label>
+                                    <label>Open</label>
                                     <input type="text" name="measure_8" value="{{$lims_customer_measurements_all->measure_8}}" class="form-control">
                                 </div>
-                            </div>
+                            </div><!--
 							<div class="col-md-3">
                                 <div class="form-group">
                                     <label>Cuff</label>
@@ -156,7 +156,7 @@
                                     <label>Croach</label>
                                     <input type="text" name="measure_18" value="{{$lims_customer_measurements_all->measure_18}}" class="form-control">
                                 </div>
-                            </div>
+                            </div>-->
 							<div class="col-md-12">
                                 <div class="form-group mt-3">
 									<label>Notes</label>
@@ -225,9 +225,7 @@ $("#submit-button").on("click", function(event){
 		var customer_name = [];
 		var phone_number = [];
 		var measure_1 = [];var measure_2 = [];var measure_3 = [];var measure_4 = [];var measure_5 = [];
-		var measure_6 = [];var measure_7 = [];var measure_8 = [];var measure_9 = [];var measure_10 = [];
-		var measure_11 = [];var measure_12 = [];var measure_13 = [];var measure_14 = [];var measure_15 = [];
-		var measure_16 = [];var measure_17 = [];var measure_18 = [];
+		var measure_6 = [];var measure_7 = [];var measure_8 = [];
 		var measure_notes = [];
 		customer_name.push(<?php echo json_encode($lims_customer_data->name) ?>);
 		phone_number.push(<?php echo json_encode($lims_customer_data->phone_number) ?>);
@@ -239,16 +237,6 @@ $("#submit-button").on("click", function(event){
 		measure_6.push(<?php echo json_encode($lims_customer_measurements_all->measure_6) ?>);
 		measure_7.push(<?php echo json_encode($lims_customer_measurements_all->measure_7) ?>);
 		measure_8.push(<?php echo json_encode($lims_customer_measurements_all->measure_8) ?>);
-		measure_9.push(<?php echo json_encode($lims_customer_measurements_all->measure_9) ?>);
-		measure_10.push(<?php echo json_encode($lims_customer_measurements_all->measure_10) ?>);
-		measure_11.push(<?php echo json_encode($lims_customer_measurements_all->measure_11) ?>);
-		measure_12.push(<?php echo json_encode($lims_customer_measurements_all->measure_12) ?>);
-		measure_13.push(<?php echo json_encode($lims_customer_measurements_all->measure_13) ?>);
-		measure_14.push(<?php echo json_encode($lims_customer_measurements_all->measure_14) ?>);
-		measure_15.push(<?php echo json_encode($lims_customer_measurements_all->measure_15) ?>);
-		measure_16.push(<?php echo json_encode($lims_customer_measurements_all->measure_16) ?>);
-		measure_17.push(<?php echo json_encode($lims_customer_measurements_all->measure_17) ?>);
-		measure_18.push(<?php echo json_encode($lims_customer_measurements_all->measure_18) ?>);
 		measure_notes.push(<?php echo json_encode($lims_customer_measurements_all->measure_notes) ?>);
 			
 	var htmltext = '<table class="barcodelist" style="width: 100%" cellpadding="5px" cellspacing="5px" border="1">';
@@ -256,9 +244,6 @@ $("#submit-button").on("click", function(event){
 	htmltext += '<strong>Customer Name: </strong>'+customer_name +'</td><td colspan="2"><strong>Phone Number: </strong>'+phone_number+'</td></tr>';
 	htmltext += '<tr><td><strong>Neckline: </strong>'+measure_1+ '</td><td><strong>Shoulder: </strong>'+measure_2+'</td><td><strong>Bust: 	 </strong>'+measure_3+'</td><td><strong>Bust Point: </strong>'+measure_4+'</td></tr>';
 	htmltext += '<tr><td><strong>Bust Distance: </strong>'+measure_5+ '</td><td><strong>Arm Hole: </strong>'+measure_6+'</td><td><strong>Muscle: 	 </strong>'+measure_7+'</td><td><strong>Sleeve: </strong>'+measure_8+'</td></tr>';
-	htmltext += '<tr><td><strong>Cuff: </strong>'+measure_9+ '</td><td><strong>Figure: </strong>'+measure_10+'</td><td><strong>Waist: 	 </strong>'+measure_11+'</td><td><strong>Upper Bust Front: 	 </strong>'+measure_12+'</td></tr>';
-	htmltext += '<tr><td><strong>Upper Bust Back: </strong>'+measure_13+ '</td><td><strong>First hips/Scond hips: </strong>'+measure_14+'</td><td><strong>Empire: </strong>'+measure_15+'</td><td><strong>Blouse Length: </strong>'+measure_16+'</td></tr>';
-    htmltext += '<tr><td><strong>Pants Length: </strong>'+measure_17+ '</td><td><strong>Croach: </strong>'+measure_18+'</td><td colspan="2"></td></tr>';
 	htmltext += '<tr><td colspan="4"><strong>Notes: </strong>'+measure_notes+'</td></tr>';
         htmltext += '</table">';
 		$('#label-content').html(htmltext);

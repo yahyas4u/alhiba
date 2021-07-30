@@ -1428,12 +1428,12 @@
                             <input type="text" name="phone_number" required class="form-control">
                         </div>
                         <div class="form-group">
-                            <label>{{trans('file.Address')}} *</label>
-                            <input type="text" name="address" required class="form-control">
+                            <label>{{trans('file.Address')}} </label>
+                            <input type="text" name="address" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label>{{trans('file.City')}} *</label>
-                            <input type="text" name="city" required class="form-control">
+                            <label>{{trans('file.City')}} </label>
+                            <input type="text" name="city" class="form-control">
                         </div>
                     </div>
                   </div>
@@ -1449,7 +1449,7 @@
                                 <div class="col-md-10">
                                     <div class="row">
 										<div class="form-group col-md-3 mt-1">
-											<label>Neckline  </label>
+											<label>Length  </label>
 											<input type="text" name="measure_1"  class="form-control">
 										</div>
 										<div class="form-group col-md-3 mt-1">
@@ -1457,11 +1457,11 @@
 											<input type="text" name="measure_2"  class="form-control">
 										</div>
 										<div class="form-group col-md-3 mt-1">
-											<label>Bust </label>
+											<label>Hand Length </label>
 											<input type="text" name="measure_3"  class="form-control">
 									   </div>
 										<div class="form-group col-md-3 mt-1">
-											<label>Bust Point </label>
+											<label>Neck </label>
 											<input type="text" name="measure_4"  class="form-control">
 										</div>
 							       </div>
@@ -1471,25 +1471,25 @@
                                 <div class="col-md-10">
                                     <div class="row">
 										<div class="form-group col-md-3 mt-1">
-											<label>Bust Distance </label>
+											<label>Upper hand Loose </label>
 											<input type="text" name="measure_5"  class="form-control">
 										</div>
 										<div class="form-group col-md-3 mt-1">
-											<label>Arm Hole </label>
+											<label>Lower Hand Loose </label>
 											<input type="text" name="measure_6"  class="form-control">
 										</div>
 										<div class="form-group col-md-3 mt-1">
-											<label>Muscle </label>
+											<label>Bottom Loose </label>
 											<input type="text" name="measure_7"  class="form-control">
 									   </div>
 										<div class="form-group col-md-3 mt-1">
-											<label>Sleeve Length </label>
+											<label>Open</label>
 											<input type="text" name="measure_8"  class="form-control">
 										</div>
 
 							       </div>
 						       </div>
-						</div>	
+						</div>	<!--
 						 <div class="row">
                                 <div class="col-md-10">
                                     <div class="row">
@@ -1548,7 +1548,7 @@
 											<input type="text" name="measure_18"  class="form-control">
 										</div>
 							       </div>
-						       </div>
+						       </div>-->
                                 <div class="form-group col-md-10">
                                     <div class="row">
 								 <div class="form-group col-md-12">
@@ -2021,9 +2021,7 @@ $(document).on("change", ".open-EditCategoryDialog", function(){
 		  var customer_name = [];
 		  var phone_number = [];
 		  var measure_1 = [];var measure_2 = [];var measure_3 = [];var measure_4 = [];var measure_5 = [];
-		  var measure_6 = [];var measure_7 = [];var measure_8 = [];var measure_9 = [];var measure_10 = [];
-		  var measure_11 = [];var measure_12 = [];var measure_13 = [];var measure_14 = [];var measure_15 = [];
-		  var measure_16 = [];var measure_17 = [];var measure_18 = [];
+		  var measure_6 = [];var measure_7 = [];var measure_8 = [];
 		  var measure_notes = [];
           var url ="customer/";
           var id = document.getElementById('customer_id').value;
@@ -2044,16 +2042,6 @@ $(document).on("change", ".open-EditCategoryDialog", function(){
 			measure_6.push(data['measure_6']);
 			measure_7.push(data['measure_7']);
 			measure_8.push(data['measure_8']);
-			measure_9.push(data['measure_9']);
-			measure_10.push(data['measure_10']);
-			measure_11.push(data['measure_11']);
-			measure_12.push(data['measure_12']);
-			measure_13.push(data['measure_13']);
-			measure_14.push(data['measure_14']);
-			measure_15.push(data['measure_15']);
-			measure_16.push(data['measure_16']);
-			measure_17.push(data['measure_17']);
-			measure_18.push(data['measure_18']);
 			measure_notes.push(data['measure_notes']);
 		 
 	var htmltext = '<table class="barcodelist" style="width: 100%" cellpadding="5px" cellspacing="5px" border="1">';
@@ -2061,9 +2049,6 @@ $(document).on("change", ".open-EditCategoryDialog", function(){
 	htmltext += '<strong>Customer Name: </strong>'+customer_name +'</td><td colspan="2"><strong>Phone Number: </strong>'+phone_number+'</td></tr>';
 	htmltext += '<tr><td><strong>Neckline: </strong>'+measure_1+ '</td><td><strong>Shoulder: </strong>'+measure_2+'</td><td><strong>Bust: 	 </strong>'+measure_3+'</td><td><strong>Bust Point: </strong>'+measure_4+'</td></tr>';
 	htmltext += '<tr><td><strong>Bust Distance: </strong>'+measure_5+ '</td><td><strong>Arm Hole: </strong>'+measure_6+'</td><td><strong>Muscle: 	 </strong>'+measure_7+'</td><td><strong>Sleeve: </strong>'+measure_8+'</td></tr>';
-	htmltext += '<tr><td><strong>Cuff: </strong>'+measure_9+ '</td><td><strong>Figure: </strong>'+measure_10+'</td><td><strong>Waist: 	 </strong>'+measure_11+'</td><td><strong>Upper Bust Front: 	 </strong>'+measure_12+'</td></tr>';
-	htmltext += '<tr><td><strong>Upper Bust Back: </strong>'+measure_13+ '</td><td><strong>First hips/Scond hips: </strong>'+measure_14+'</td><td><strong>Empire: </strong>'+measure_15+'</td><td><strong>Blouse Length: </strong>'+measure_16+'</td></tr>';
-    htmltext += '<tr><td><strong>Pants Length: </strong>'+measure_17+ '</td><td><strong>Croach: </strong>'+measure_18+'</td><td colspan="2"></td></tr>';
 	htmltext += '<tr><td colspan="4"><strong>Notes: </strong>'+measure_notes+'</td></tr>';
 	htmltext += '</table">';
 	$('#label-content').html(htmltext);
