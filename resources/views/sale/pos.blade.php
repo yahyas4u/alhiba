@@ -1471,33 +1471,33 @@
                                 <div class="col-md-10">
                                     <div class="row">
 										<div class="form-group col-md-3 mt-1">
-											<label>Upper hand Loose </label>
+											<label>Chest Loose </label>
 											<input type="text" name="measure_5"  class="form-control">
 										</div>
 										<div class="form-group col-md-3 mt-1">
-											<label>Lower Hand Loose </label>
+											<label>Upper hand Loose </label>
 											<input type="text" name="measure_6"  class="form-control">
 										</div>
 										<div class="form-group col-md-3 mt-1">
-											<label>Bottom Loose </label>
+											<label>Lower Hand Loose </label>
 											<input type="text" name="measure_7"  class="form-control">
 									   </div>
 										<div class="form-group col-md-3 mt-1">
-											<label>Open</label>
+											<label>Bottom Loose</label>
 											<input type="text" name="measure_8"  class="form-control">
 										</div>
 
 							       </div>
 						       </div>
-						</div>	<!--
+						</div>	
 						 <div class="row">
                                 <div class="col-md-10">
                                     <div class="row">
 										<div class="form-group col-md-3 mt-1">
-												<label>Cuff </label>
+												<label>Open </label>
 												<input type="text" name="measure_9"  class="form-control">
 										</div>
-										<div class="form-group col-md-3 mt-1">
+									<!--	<div class="form-group col-md-3 mt-1">
 											<label>Figure </label>
 											<input type="text" name="measure_10"  class="form-control">
 										</div>
@@ -1508,12 +1508,12 @@
 										<div class="form-group col-md-3 mt-1">
 											<label>Upper Bust Front </label>
 											<input type="text" name="measure_12"  class="form-control">
-										</div>
+										</div>-->
 
 							       </div>
 						       </div>
 						 </div>
-						 <div class="row">
+						<!-- <div class="row">
                                 <div class="col-md-10">
                                     <div class="row">
 										<div class="form-group col-md-3 mt-1">
@@ -2021,7 +2021,7 @@ $(document).on("change", ".open-EditCategoryDialog", function(){
 		  var customer_name = [];
 		  var phone_number = [];
 		  var measure_1 = [];var measure_2 = [];var measure_3 = [];var measure_4 = [];var measure_5 = [];
-		  var measure_6 = [];var measure_7 = [];var measure_8 = [];
+		  var measure_6 = [];var measure_7 = [];var measure_8 = [];var measure_9=[];
 		  var measure_notes = [];
           var url ="customer/";
           var id = document.getElementById('customer_id').value;
@@ -2042,13 +2042,15 @@ $(document).on("change", ".open-EditCategoryDialog", function(){
 			measure_6.push(data['measure_6']);
 			measure_7.push(data['measure_7']);
 			measure_8.push(data['measure_8']);
+			measure_9.push(data['measure_9']);
 			measure_notes.push(data['measure_notes']);
 		 
 	var htmltext = '<table class="barcodelist" style="width: 100%" cellpadding="5px" cellspacing="5px" border="1">';
 	htmltext +='<tr style="width:100%;"><td colspan="2">';
 	htmltext += '<strong>Customer Name: </strong>'+customer_name +'</td><td colspan="2"><strong>Phone Number: </strong>'+phone_number+'</td></tr>';
-	htmltext += '<tr><td><strong>Neckline: </strong>'+measure_1+ '</td><td><strong>Shoulder: </strong>'+measure_2+'</td><td><strong>Bust: 	 </strong>'+measure_3+'</td><td><strong>Bust Point: </strong>'+measure_4+'</td></tr>';
-	htmltext += '<tr><td><strong>Bust Distance: </strong>'+measure_5+ '</td><td><strong>Arm Hole: </strong>'+measure_6+'</td><td><strong>Muscle: 	 </strong>'+measure_7+'</td><td><strong>Sleeve: </strong>'+measure_8+'</td></tr>';
+	htmltext += '<tr><td><strong>Length: </strong>'+measure_1+ '</td><td><strong>Shoulder: </strong>'+measure_2+'</td><td><strong>Hand Length: 	 </strong>'+measure_3+'</td><td><strong>Neck: </strong>'+measure_4+'</td></tr>';
+	htmltext += '<tr><td><strong>Chest Loose: </strong>'+measure_5+ '</td><td><strong>Upper hand Loose: </strong>'+measure_6+'</td><td><strong>Lower Hand Loose: 	 </strong>'+measure_7+'</td><td><strong>Bottom Loose: </strong>'+measure_8+'</td></tr>';
+	htmltext += '<tr><td><strong>Open: </strong>'+measure_9+'</td></tr>';
 	htmltext += '<tr><td colspan="4"><strong>Notes: </strong>'+measure_notes+'</td></tr>';
 	htmltext += '</table">';
 	$('#label-content').html(htmltext);

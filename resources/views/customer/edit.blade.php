@@ -75,35 +75,35 @@
                             </div>
 							<div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Upper hand Loose</label>
+                                    <label>Chest Loose</label>
                                     <input type="text" name="measure_5" value="{{$lims_customer_measurements_all->measure_5}}" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Lower Hand Loose </label>
+                                    <label>Upper hand Loose </label>
                                     <input type="text" name="measure_6" value="{{$lims_customer_measurements_all->measure_6}}" class="form-control">
                                 </div>
                             </div>
 					 		<div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Bottom Loose</label>
+                                    <label>Lower Hand Loose</label>
                                     <input type="text" name="measure_7" value="{{$lims_customer_measurements_all->measure_7}}" class="form-control">
                                 </div>
                             </div>
 							<div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Open</label>
+                                    <label>Bottom Loose</label>
                                     <input type="text" name="measure_8" value="{{$lims_customer_measurements_all->measure_8}}" class="form-control">
                                 </div>
-                            </div><!--
+                            </div>
 							<div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Cuff</label>
+                                    <label>Open</label>
                                     <input type="text" name="measure_9" value="{{$lims_customer_measurements_all->measure_9}}" class="form-control">
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                           <!-- <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Figure</label>
                                     <input type="text" name="measure_10" value="{{$lims_customer_measurements_all->measure_10}}" class="form-control">
@@ -225,7 +225,7 @@ $("#submit-button").on("click", function(event){
 		var customer_name = [];
 		var phone_number = [];
 		var measure_1 = [];var measure_2 = [];var measure_3 = [];var measure_4 = [];var measure_5 = [];
-		var measure_6 = [];var measure_7 = [];var measure_8 = [];
+		var measure_6 = [];var measure_7 = [];var measure_8 = [];var measure_9 = [];
 		var measure_notes = [];
 		customer_name.push(<?php echo json_encode($lims_customer_data->name) ?>);
 		phone_number.push(<?php echo json_encode($lims_customer_data->phone_number) ?>);
@@ -237,15 +237,17 @@ $("#submit-button").on("click", function(event){
 		measure_6.push(<?php echo json_encode($lims_customer_measurements_all->measure_6) ?>);
 		measure_7.push(<?php echo json_encode($lims_customer_measurements_all->measure_7) ?>);
 		measure_8.push(<?php echo json_encode($lims_customer_measurements_all->measure_8) ?>);
+		measure_9.push(<?php echo json_encode($lims_customer_measurements_all->measure_9) ?>);
 		measure_notes.push(<?php echo json_encode($lims_customer_measurements_all->measure_notes) ?>);
 			
 	var htmltext = '<table class="barcodelist" style="width: 100%" cellpadding="5px" cellspacing="5px" border="1">';
 	htmltext +='<tr style="width:100%;"><td colspan="2">';
 	htmltext += '<strong>Customer Name: </strong>'+customer_name +'</td><td colspan="2"><strong>Phone Number: </strong>'+phone_number+'</td></tr>';
-	htmltext += '<tr><td><strong>Neckline: </strong>'+measure_1+ '</td><td><strong>Shoulder: </strong>'+measure_2+'</td><td><strong>Bust: 	 </strong>'+measure_3+'</td><td><strong>Bust Point: </strong>'+measure_4+'</td></tr>';
-	htmltext += '<tr><td><strong>Bust Distance: </strong>'+measure_5+ '</td><td><strong>Arm Hole: </strong>'+measure_6+'</td><td><strong>Muscle: 	 </strong>'+measure_7+'</td><td><strong>Sleeve: </strong>'+measure_8+'</td></tr>';
+	htmltext += '<tr><td><strong>Length: </strong>'+measure_1+ '</td><td><strong>Shoulder: </strong>'+measure_2+'</td><td><strong>Hand Length: 	 </strong>'+measure_3+'</td><td><strong>Neck: </strong>'+measure_4+'</td></tr>';
+	htmltext += '<tr><td><strong>Chest Loose: </strong>'+measure_5+ '</td><td><strong>Upper hand Loose: </strong>'+measure_6+'</td><td><strong>Lower Hand Loose: 	 </strong>'+measure_7+'</td><td><strong>Bottom Loose: </strong>'+measure_8+'</td></tr>';
+	htmltext += '<tr><td><strong>Open: </strong>'+measure_9+'</td></tr>';
 	htmltext += '<tr><td colspan="4"><strong>Notes: </strong>'+measure_notes+'</td></tr>';
-        htmltext += '</table">';
+	htmltext += '</table">';
 		$('#label-content').html(htmltext);
 		$('#print-barcode').modal('show');
 	});

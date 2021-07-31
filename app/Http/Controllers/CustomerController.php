@@ -110,8 +110,8 @@ class CustomerController extends Controller
        $lims_customer_data['measure_6'] = $lims_customer_data['measure_6'];
        $lims_customer_data['measure_7'] = $lims_customer_data['measure_7'];
        $lims_customer_data['measure_8'] = $lims_customer_data['measure_8'];
-      /* $lims_customer_data['measure_9'] = $lims_customer_data['measure_9'];
-       $lims_customer_data['measure_10'] = $lims_customer_data['measure_10'];
+       $lims_customer_data['measure_9'] = $lims_customer_data['measure_9'];
+      /* $lims_customer_data['measure_10'] = $lims_customer_data['measure_10'];
        $lims_customer_data['measure_11'] = $lims_customer_data['measure_11'];
        $lims_customer_data['measure_12'] = $lims_customer_data['measure_12'];
        $lims_customer_data['measure_13'] = $lims_customer_data['measure_13'];
@@ -215,6 +215,7 @@ class CustomerController extends Controller
         $lims_customer_measurement_data['measure_6'] = $input['measure_6'];
         $lims_customer_measurement_data['measure_7'] = $input['measure_7'];
         $lims_customer_measurement_data['measure_8'] = $input['measure_8'];
+        $lims_customer_measurement_data['measure_9'] = $input['measure_9'];
         $lims_customer_measurement_data['measure_notes'] = $input['measure_notes'];
        // dd($lims_customer_measurement_data);
         $lims_customer_measurement_data->update($input);
